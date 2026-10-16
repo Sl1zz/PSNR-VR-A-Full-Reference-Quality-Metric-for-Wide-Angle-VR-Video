@@ -1,6 +1,6 @@
 # PSNR-VR: A Full-Reference Quality Metric for Wide-Angle VR Video
 
-**Subjective quality scores and objective metric outputs** accompanying the paper:
+**Mean opinion scores, objective metric outputs and correlation results** accompanying the paper:
 
 > S. J. Rogers, T. Weti, G. A. Voronkov, P. Delmas, and A. Mozhaeva, "PSNR-VR: A Full-Reference Quality Metric for Wide-Angle VR Video Incorporating Human Visual System Models," *under review*, 2026.
 
@@ -40,9 +40,7 @@ PSNR-VR correlates significantly better with MOS than PSNR, SSIM and BRISQUE (tw
 ```
 data/
 ├── metric_scores.csv        # All metric outputs + MOS for the 14 sequences (paper Table I)
-├── correlations.csv         # PLCC / SROCC, 95% CIs, Williams-test p-values, within-CRF results (paper Table II)
-├── mos_summary.csv          # MOS, 95% confidence interval and N per sequence
-└── ratings_anonymised.csv   # Individual ratings (participant IDs P01–P20)
+└── correlations.csv         # PLCC / SROCC, 95% CIs, Williams-test p-values, within-CRF results (paper Table II)
 LICENSE
 README.md
 ```
@@ -60,25 +58,6 @@ README.md
 | `brisque` | BRISQUE, 0–100 (**lower is better**; sign reversed for correlation) |
 | `psnr_sp_vr_db` | PSNR-sp-VR (no temporal weighting), dB |
 | `mos` | Mean opinion score, 0 (Bad) – 5 (Excellent) |
-
-### `mos_summary.csv`
-
-| Column | Description |
-|---|---|
-| `content`, `crf` | Sequence identifier |
-| `mos` | Mean of retained ratings |
-| `ci95_low`, `ci95_high` | 95% confidence interval of the MOS (ITU-R BT.500) |
-| `n` | Number of retained ratings |
-
-### `ratings_anonymised.csv`
-
-| Column | Description |
-|---|---|
-| `participant` | Anonymised ID (P01–P20) |
-| `content` | Source video name |
-| `crf` | 51 or 63 |
-| `rating` | Continuous rating, 0–5 |
-| `excluded` | `1` if the trial was removed by the fixation-deviation criterion |
 
 ---
 
