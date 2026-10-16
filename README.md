@@ -8,6 +8,14 @@ PSNR-VR keeps the simple PSNR formulation but weights pixel errors by how visibl
 
 ---
 
+## Method Overview
+
+![PSNR-VR processing pipeline](figures/psnr_vr_pipeline.png)
+
+*Overview of the PSNR-VR framework (paper Fig. 1). The reference video is used for ROI segmentation and for spatial, temporal and peripheral HVS processing. Motion is evaluated relative to the ROI, and the reference–distorted error is weighted by the resulting perceptual sensitivity before conversion to a decibel score. The dashed path is PSNR-sp-VR, the simplified variant without temporal processing.*
+
+---
+
 ## At a Glance
 
 | | |
@@ -41,6 +49,8 @@ PSNR-VR correlates significantly better with MOS than PSNR, SSIM and BRISQUE (tw
 data/
 ├── metric_scores.csv        # All metric outputs + MOS for the 14 sequences (paper Table I)
 └── correlations.csv         # PLCC / SROCC, 95% CIs, Williams-test p-values, within-CRF results (paper Table II)
+figures/
+└── psnr_vr_pipeline.png     # Processing pipeline (paper Fig. 1)
 LICENSE
 README.md
 ```
